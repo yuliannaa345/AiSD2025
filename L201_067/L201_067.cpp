@@ -2,6 +2,7 @@
 //Сортировка методом выбора
 //ПМ-2025, Чистяков Андрей
 #include <iostream>
+#include "L201_067.hpp"
 void selection_sort(int s[], int n) {
     int i, j;//счетчики
     int min; //наименьший элемент

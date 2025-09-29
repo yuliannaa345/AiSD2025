@@ -1,7 +1,8 @@
 ﻿//L101_026
 //Сортировка вставками
 //ПМ-2025, Чистяков Андрей
-
+#include <iostream>
+#include "L101_026.hpp"
 void insertion_sort(int s[], int n)
 {
     int i, j;
