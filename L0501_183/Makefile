@@ -1,7 +1,7 @@
 CXX=g++
 
 ifeq ($(OS),Windows_NT)
-	RM=del
+	RM=rm
 	EXT=.exe
 else
 	RM=rm
