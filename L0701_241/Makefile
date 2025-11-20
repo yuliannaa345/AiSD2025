@@ -1,7 +1,7 @@
 CXX=g++
 
 ifeq ($(OS),Windows_NT)
-	RM=del
+	RM=rm
 	EXT=.exe
 else
 	RM=rm
@@ -22,4 +22,4 @@ L0701_241_test.o: L0701_241_test.cpp L0701_241.hpp
 
 .PHONY: clean
 clean:
-	$(RM) $(objects) $(l0701_241o) m.exe L0701_241.exe
+	$(RM) -f $(l0701_241o) L0701_241.exe

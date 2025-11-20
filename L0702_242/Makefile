@@ -1,7 +1,7 @@
 CXX=g++
 
 ifeq ($(OS),Windows_NT)
-	RM=del
+	RM=rm
 	EXT=.exe
 else
 	RM=rm
@@ -11,6 +11,7 @@ endif
 
 
 l0702_242o=L0702_242.o L0702_242_test.o
+
 L0702_242.exe: $(l0702_242o)
 	$(CXX) -o L0702_242.exe $(l0702_242o)
 
@@ -22,4 +23,4 @@ L0702_242_test.o: L0702_242_test.cpp L0702_242.hpp
 
 .PHONY: clean
 clean:
-	$(RM) $(objects) $(l0702_242o) m.exe L0702_242.exe
+	$(RM) -f $(l0702_242o) L0702_242.exe
