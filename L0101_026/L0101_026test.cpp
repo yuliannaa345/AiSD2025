@@ -1,6 +1,6 @@
 ﻿//Тесты для листинга 1.1, Чистяков Андрей, ПМ-201
 #include <iostream>
-#include "L101_026.HPP"
+#include "L0101_026.HPP"
 #include <list>
 using namespace std;
 int main() {

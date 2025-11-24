@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     list <string> numbers = { "z","gaf", "gaf", "aaaaaaa", "bbbb" };
 
-    insertion_sort(begin(numbers), end(numbers));
+    selection_sort(begin(numbers), end(numbers));
 
     for (string num : numbers) {
         cout << num << " ";
