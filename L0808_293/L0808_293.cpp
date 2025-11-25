@@ -1,4 +1,4 @@
-#include "L088_293.hpp"
+#include "L0808_293.hpp"
 //Барановой Дарьи пм-201
 // Конструктор: инициализация системы непересекающихся множеств
 UnionFind::UnionFind(int n) : n(n) {
@@ -54,3 +54,4 @@ int UnionFind::getSize(int x) {
 int UnionFind::getN() const {
     return n;
 }
+
