@@ -8,5 +8,6 @@ using namespace std;
 
 
 int main() {
+Graph graph;		// Создание графа
 return 0;
 }
