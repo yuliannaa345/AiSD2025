@@ -11,6 +11,9 @@ using namespace std;
 int main() {
 Graph graph; 
 initialize_graph (graph, 0);
+if (graph.nvertices != 0 or graph.nedges != 0 or graph.degree.size() != MAXV or graph.edges.size() != MAXV) {	// Проверка инициализации
+  cout << "error initialize_graph";
+    }
 
  return 0;
 }
