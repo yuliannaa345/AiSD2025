@@ -3,6 +3,7 @@
 #include "L0703_242.hpp"
 #include <iostream>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 
@@ -15,7 +16,7 @@ void initialize_graph(Graph &g, bool directed) {
     g.edges.resize(MAXV);
 }
 
-void read_graph(Graph &g, bool directed) {
+void read_graph(Graph &g, bool directed,  ifstream &cin) {
     int m;							// Количество рёбер
     int x, y;							// Вершины в ребре (x,y)
 

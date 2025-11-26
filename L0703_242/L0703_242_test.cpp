@@ -5,13 +5,15 @@
 #include "L0703_242.hpp"
 #include <iostream>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 
 
 int main() {
 Graph graph; 
-read_graph (graph, false);
+ifstream cin("L0703_242_test.txt");		// Переобозначение для чтения из файла
+read_graph(graph, false, cin);
 
 
  return 0;

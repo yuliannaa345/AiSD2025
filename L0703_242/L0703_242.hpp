@@ -21,8 +21,6 @@ int nedges;
 int directed;
 };
 void initialize_graph(Graph &g, bool directed);
-void read_graph(Graph &g, bool directed);
-
-struct List;
+void read_graph(Graph &g, bool directed, ifstream &cin);
 
 #endif
