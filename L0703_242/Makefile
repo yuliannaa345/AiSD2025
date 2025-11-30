@@ -1,4 +1,5 @@
 CXX=g++
+CXXFLAGS=-I"AiSD2025L0701_241" -I"AiSD2025L0702_242"
 
 ifeq ($(OS),Windows_NT)
 	RM=rm
@@ -10,16 +11,22 @@ else
 endif
 
 
-l0703_242o=L0703_242.o L0703_242_test.o
+l0703_242o=L0703_242.o L0703_242_test.o L0702_242.o
 L0703_242.exe: $(l0703_242o)
 	$(CXX) -o L0703_242.exe $(l0703_242o)
 
 L0703_242.o: L0703_242.cpp
-	$(CXX) -c L0703_242.cpp
+	$(CXX) $(CXXFLAGS) -c L0703_242.cpp
 
 L0703_242_test.o: L0703_242_test.cpp L0703_242.hpp
-	$(CXX) -c L0703_242_test.cpp
+	$(CXX) $(CXXFLAGS) -c L0703_242_test.cpp
 
-.PHONY: clean
+L0702_242.o: ../L0702_242/L0702_242.cpp
+	$(CXX) $(CXXFLAGS) -c ../L0702_242/L0702_242.cpp
+
+.PHONY: clean run all
 clean:
 	$(RM) -f $(l0703_242o) L0703_242.exe
+run:
+	L0703_242.exe
+all: L0703_242.exe run clean

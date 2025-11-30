@@ -1,6 +1,7 @@
 //Карасс Виталий, МХ-201, , Инициализация графа, L0702_242
 
 #include "L0702_242.hpp"
+#include "../L0701_241/L0701_241.hpp"
 #include <iostream>
 #include <vector>
 using namespace std;
