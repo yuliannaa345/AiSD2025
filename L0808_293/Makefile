@@ -25,5 +25,7 @@ test_L0808_293.o: test_L0808_293.cpp L0808_293.hpp
 clean:
 	$(RM) -f $(L0808_293o) L0808_293.exe
 run:
+	chcp 65001
 	L0808_293.exe
+	chcp 866
 all: L0808_293.exe run clean
