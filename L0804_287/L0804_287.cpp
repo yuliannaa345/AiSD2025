@@ -11,7 +11,7 @@ void initialize_graph(graph* g, bool directed) {
     }
 }
 
-// Добавление ребра между вершинами x и y
+// Добавление ребра между вершинами
 void insert_edge(graph* g, int x, int y, int weight, bool directed) {
     edgenode* p = new edgenode;
     
