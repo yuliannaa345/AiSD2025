@@ -20,7 +20,7 @@ void insert_edge(graph* g, int x, int y, int weight, bool directed) {
     p->next = g->edges[x];
     g->edges[x] = p;
   
-    // Если граф неориентированный, нужно добавить обратное ребро
+    // Если граф неориентированный, добавить обратное ребро
     if (!directed) {
         insert_edge(g, y, x, weight, true);
     } else {
