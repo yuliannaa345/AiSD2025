@@ -3,12 +3,12 @@
 
 #include <iostream>
 
-const int MAXV = 100;
+const int MAXV = 100;            // Максимальное количество вершин в графе
 const int MAXINT = 1000000;
 
 // Структура ребра
 struct edgenode {
-    int y;
+    int y;                       // Номер вершины, в которую ведет это ребро
     int weight;
     edgenode* next;
 };
@@ -25,4 +25,4 @@ void initialize_graph(graph* g, bool directed);
 void insert_edge(graph* g, int x, int y, int weight, bool directed);
 int prim(graph* g, int start);
 
-#endif // L0804_287_H
+#endif
