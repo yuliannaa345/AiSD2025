@@ -7,7 +7,7 @@ int main() {
     initialize_graph(&g, false);
     g.nvertices = 6;
 
-    // Добавляем все ребра
+    // Добавляем ребра
     insert_edge(&g, 1, 2, 6, false);
     insert_edge(&g, 1, 3, 1, false);
     insert_edge(&g, 1, 4, 5, false);
