@@ -1,8 +1,7 @@
-// Алгоритм Прима — алгоритм построения минимального остовного дерева (минимального остова) взвешенного связного неориентированного графа.
+// Prim’s Algorithm for Minimum Spanning Tree
 
 #include "L0804_287.h"
 
-// Инициализация графа
 void initialize_graph(graph* g, bool directed) {
     g->nvertices = 0;
     g->nedges = 0;
@@ -13,7 +12,6 @@ void initialize_graph(graph* g, bool directed) {
     }
 }
 
-// Добавление ребра между вершинами
 void insert_edge(graph* g, int x, int y, int weight, bool directed) {
     edgenode* p = new edgenode;
     
@@ -22,7 +20,6 @@ void insert_edge(graph* g, int x, int y, int weight, bool directed) {
     p->next = g->edges[x];
     g->edges[x] = p;
   
-    // Если граф неориентированный, добавить обратное ребро
     if (!directed) {
         insert_edge(g, y, x, weight, true);
     } else {
@@ -35,14 +32,13 @@ int prim(graph* g, int start) {
     int i;
     edgenode* p;
     int dist;
-    bool intree[MAXV+1];         // Есть ли вершина уже в дереве?
-    int distance[MAXV+1];        // Минимальный вес ребра до вершины от дерева
-    int parent[MAXV+1];          // Предок в дереве
-    int v;                       // Текущая вершина для обработки
-    int w;                       // Кандидат на следующую вершину
-    int weight = 0;              // Вес всего дерева
+    bool intree[MAXV+1];         // Is there a vertex already in the tree?
+    int distance[MAXV+1];        // Minimum weight of an edge to a vertex from a tree
+    int parent[MAXV+1];          // The ancestor
+    int v;                       // Current vertex
+    int w;                       // Candidate for the next vertex
+    int weight = 0;             
 
-    // Инициализация
     for (i = 1; i <= g->nvertices; i++) {
         intree[i] = false;
         distance[i] = MAXINT;
@@ -56,10 +52,9 @@ int prim(graph* g, int start) {
         intree[v] = true;
         
         if (v != start) {
-            std::cout << "Ребро (" << parent[v] << "," << v << ") в дереве \n";
+            std::cout << "An edge (" << parent[v] << "," << v << ") in the tree \n";
             weight = weight + distance[v];
         }
-        // Обход всех ребер, исходящие из текущей вершины
         p = g->edges[v];
         while (p != nullptr) {
             w = p->y;
@@ -69,7 +64,7 @@ int prim(graph* g, int start) {
             }
             p = p->next;
         }
-        // Поиск следующей вершины для добавления в дерево
+        // Search for the next vertex
         dist = MAXINT;
         for (i = 1; i <= g->nvertices; i++) {
             if ((!intree[i]) && (dist > distance[i])) {
