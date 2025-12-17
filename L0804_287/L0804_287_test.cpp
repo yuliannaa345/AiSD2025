@@ -3,11 +3,9 @@
 int main() {
     graph g;
     
-    // Инициализируем граф как неориентированный
     initialize_graph(&g, false);
     g.nvertices = 6;
 
-    // Добавляем ребра
     insert_edge(&g, 1, 2, 6, false);
     insert_edge(&g, 1, 3, 1, false);
     insert_edge(&g, 1, 4, 5, false);
@@ -20,9 +18,8 @@ int main() {
     insert_edge(&g, 5, 6, 6, false);
 
     int total_weight = prim(&g, 1);
-    std::cout << "Вес минимального остовного дерева: " << total_weight << "\n";
+    std::cout << "Weight of the minimum spanning tree: " << total_weight << "\n";
     
-    // Очистка памяти
     for (int i = 1; i <= g.nvertices; i++) {
         edgenode* p = g.edges[i];
         while (p != nullptr) {
