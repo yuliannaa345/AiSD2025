@@ -3,7 +3,7 @@
 using namespace std;
 
 const int NIL = -1;
-int parent[3][5];
+int parent[4][6];
 
 void report_subset(int n, int k) {
      if (k == 0) 
