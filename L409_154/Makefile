@@ -12,5 +12,5 @@ L409_154test.o: L409_154test.cpp L409_154.hpp
 clean:
 	$(RM) $(objects) $(l409154o) L409_154.exe
 run:
-	L303088.exe
-all: L303088.exe run clean
+	L409_154.exe
+all: L409_154.exe run clean
