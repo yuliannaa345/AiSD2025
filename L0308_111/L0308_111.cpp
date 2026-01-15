@@ -4,6 +4,7 @@
 struct Tree {
     int item;
     Tree* left;
+    Tree* right
 };
 
 Tree* find_minimum(Tree* t) {
@@ -15,4 +16,5 @@ Tree* find_minimum(Tree* t) {
         min = min->left;
     }
     return min;
+
 }
