@@ -21,37 +21,20 @@ Tree* find_minimum(Tree* t) {
     }
     return min;
 }
-// Функция вставки в бинарное дерево поиска
-Tree* insert(Tree* root, int value) {
-    if (root == nullptr) {
-        Tree* node = new Tree{value, nullptr, nullptr};
-        return node;
-    }
-    if (value < root->item)
-        root->left = insert(root->left, value);
-    else
-        root->right = insert(root->right, value);
-    return root;
-}
 
-int main() {
-    Tree* root = nullptr;
-    string line;
-
-    cout << "Введите элементы дерева:\n";
-    getline(cin, line);
-    stringstream ss(line);
-    int value;
-    while (ss >> value) {
-        root = insert(root, value);
-    }
-
+int main(){
+    Tree* root = new Tree{10, nullptr};
+    root->left = new Tree{5, nullptr};
+    root->right = new Tree{12, nullptr};
+    root->left->left = new Tree{2, nullptr};
+    root->left->left->left = new Tree{1, nullptr};
+ 
     Tree* minNode = find_minimum(root);
 
     if (minNode)
         cout << "Минимальный элемент: " << minNode->item << endl;
     else
         cout << "Дерево пустое." << endl;
-
+}
     return 0;
 }
